@@ -18,7 +18,7 @@ export default function Home() {
       {/* Contenido principal */}
       <main className="flex-1 flex flex-col items-center justify-center fade-in">
         <h1 className="text-5xl md:text-7xl font-extrabold text-gray-800 dark:text-white mb-4">
-          Tu Nombre Aquí
+          Miguel Gomez
         </h1>
         <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl">
           Soy un desarrollador web especializado en crear experiencias digitales increíbles. 

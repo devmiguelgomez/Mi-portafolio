@@ -3,17 +3,17 @@ export default function Projects() {
     const projects = [
       {
         title: "Proyecto 1",
-        description: "Breve descripción de este proyecto. Lo que hiciste y tecnologías usadas.",
+        description: "dahjjaddadhjad",
         link: "#"
       },
       {
         title: "Proyecto 2",
-        description: "Otro proyecto interesante que muestra tus habilidades.",
+        description: "dadadadasdsad",
         link: "#"
       },
       {
         title: "Proyecto 3",
-        description: "Este es un proyecto donde aprendiste mucho.",
+        description: "adadadad",
         link: "#"
       }
     ];
