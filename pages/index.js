@@ -1,4 +1,5 @@
 import Layout from './components/Layout'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -8,9 +9,9 @@ export default function Home() {
       <nav className="absolute top-0 left-0 w-full p-4 flex justify-between items-center">
         <span className="text-xl font-bold text-gray-800 dark:text-white">Mi Portafolio</span>
         <div className="space-x-4">
-          <a href="/projects" className="text-gray-600 dark:text-gray-300 hover:text-blue-500">Proyectos</a>
-          <a href="/about" className="text-gray-600 dark:text-gray-300 hover:text-blue-500">Sobre mí</a>
-          <a href="/contact" className="text-gray-600 dark:text-gray-300 hover:text-blue-500">Contacto</a>
+          <Link href="/projects" className="text-blue-500 hover:underline">Proyectos</Link>
+          <Link href="/about" className="text-blue-500 hover:underline">Sobre mí</Link>
+          <Link href="/contact" className="text-blue-500 hover:underline">Contacto</Link>
         </div>
       </nav>
 
@@ -24,12 +25,8 @@ export default function Home() {
         </p>
 
         <div className="mt-6 space-x-4">
-          <a href="/projects" className="px-6 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">
-            Ver Proyectos
-          </a>
-          <a href="/contact" className="px-6 py-2 border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white rounded-lg shadow hover:bg-gray-100 dark:hover:bg-gray-800 transition">
-            Contactarme
-          </a>
+        <Link href="/projects" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Ver Proyectos</Link>
+        <Link href="/contact" className="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700">Contáctame</Link>
         </div>
       </main>
 
