@@ -1,82 +1,68 @@
-import { motion } from 'framer-motion';
 import Layout from './components/Layout'
+import ProjectCard from './components/ProjectCard'
 
-// Lista de proyectos (podrías sacarlos de un archivo o base de datos si crece mucho)
 const projects = [
   {
-    title: 'Portafolio Personal',
-    description: 'Mi portafolio personal creado con Next.js y Tailwind CSS.',
-    tags: ['Next.js', 'Tailwind CSS'],
-    vercelLink: 'https://mi-portafolio.vercel.app',
-    githubLink: 'https://github.com/tu-usuario/mi-portafolio'
+    title: "Mi Portafolio",
+    description: "Un portafolio profesional creado con Next.js y TailwindCSS.",
+    tags: ["Next.js", "Tailwind CSS", "React"],
+    image: "/images/proyecto1.png",
+    vercelLink: "https://miguel-gomez-portafolio.vercel.app/",
+    githubLink: "https://github.com/CloritoxD/Mi-portafolio"
   },
   {
-    title: 'Dashboard de Ventas',
-    description: 'Dashboard para análisis de ventas usando React, MongoDB y AWS Lambda.',
-    tags: ['React', 'MongoDB', 'AWS Lambda'],
-    vercelLink: 'https://dashboard-ventas.vercel.app',
-    githubLink: 'https://github.com/tu-usuario/dashboard-ventas'
+    title: "App de Tareas",
+    description: "Aplicación para gestionar tareas con MongoDB y Node.js.",
+    tags: ["Node.js", "MongoDB", "React"],
+    image: "/images/tareas-preview.png",
+    vercelLink: "https://tareas-app.vercel.app",
+    githubLink: "https://github.com/miusuario/app-tareas"
   },
   {
-    title: 'Gestor de Inventario',
-    description: 'Sistema para gestionar inventario en línea con backend en AWS.',
-    tags: ['React', 'AWS', 'Node.js'],
-    vercelLink: 'https://gestor-inventario.vercel.app',
-    githubLink: 'https://github.com/tu-usuario/gestor-inventario'
+    title: "E-commerce",
+    description: "Tienda en línea con React y Stripe.",
+    tags: ["React", "Stripe", "Node.js"],
+    image: "/images/ecommerce-preview.png",
+    vercelLink: "https://ecommerce-app.vercel.app",
+    githubLink: "https://github.com/miusuario/ecommerce-app"
   }
-];
+]
 
 export default function Projects() {
   return (
     <Layout>
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-8"
-    >
-      <h1 className="text-4xl font-bold text-gray-800 mb-8">Proyectos</h1>
-      
-      <div className="space-y-6 w-full max-w-3xl">
-        {projects.map((project, index) => (
-          <motion.div
-            key={index}
-            whileHover={{ scale: 1.02 }}
-            className="p-6 bg-white rounded-lg shadow-lg border border-gray-200"
-          >
-            <h2 className="text-2xl font-bold text-gray-800">{project.title}</h2>
-            <p className="text-gray-600 mt-2">{project.description}</p>
+      <section className="min-h-screen py-12 fade-in">
+        <div className="container mx-auto max-w-6xl px-4">
+          <h1 className="text-5xl font-extrabold text-gray-800 dark:text-white mb-8 text-center">Mis Proyectos</h1>
 
-            <div className="flex flex-wrap mt-3 gap-2">
-              {project.tags.map((tag, i) => (
-                <span key={i} className="px-3 py-1 bg-blue-100 text-blue-600 text-sm rounded-full">
-                  {tag}
-                </span>
-              ))}
-            </div>
+          {/* Grid de proyectos */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projects.map((project, index) => (
+              <ProjectCard key={index} {...project} />
+            ))}
+          </div>
+        </div>
 
-            <div className="mt-4 flex space-x-4">
-              <a
-                href={project.vercelLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-500 hover:underline font-medium"
-              >
-                Ver en Vercel
-              </a>
-              <a
-                href={project.githubLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-800 hover:underline font-medium"
-              >
-                Código en GitHub
-              </a>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-    </motion.div>
+        {/* Animación de fade-in */}
+        <style jsx>{`
+          .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1.2s ease-out forwards;
+          }
+
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+              transform: translateY(20px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        `}</style>
+      </section>
     </Layout>
-  );
+  )
 }

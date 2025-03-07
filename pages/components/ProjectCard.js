@@ -1,0 +1,41 @@
+import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa'
+
+export default function ProjectCard({ title, description, tags, image, vercelLink, githubLink }) {
+  return (
+    <div className="relative bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg transform transition-transform hover:scale-105 hover:shadow-2xl group">
+      {/* Imagen de portada */}
+      <div className="w-full h-48 overflow-hidden">
+        <img
+          src={image}
+          alt={`Preview de ${title}`}
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+        />
+      </div>
+
+      {/* Contenido */}
+      <div className="p-4">
+        <h3 className="text-2xl font-extrabold text-gray-800 dark:text-white">{title}</h3>
+        <p className="text-gray-600 dark:text-gray-300 mt-2">{description}</p>
+
+        {/* Etiquetas */}
+        <div className="mt-3 flex flex-wrap gap-2">
+          {tags.map((tag, index) => (
+            <span key={index} className="bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        {/* Enlaces */}
+        <div className="mt-4 flex space-x-4">
+          <a href={vercelLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-blue-600 dark:text-blue-400 hover:underline">
+            <FaExternalLinkAlt /> Ver Proyecto
+          </a>
+          <a href={githubLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:underline">
+            <FaGithub /> Código Fuente
+          </a>
+        </div>
+      </div>
+    </div>
+  )
+}
