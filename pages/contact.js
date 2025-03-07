@@ -1,19 +1,24 @@
+import { motion } from 'framer-motion';
 import Layout from './components/Layout'
-
+import Link from 'next/link'
+import SocialLinks from './components/SocialLinks';
 export default function Contact() {
   return (
     <Layout>
-      <h1 className="text-4xl font-bold mb-6">Contacto</h1>
-      <p className="mb-4">¿Quieres trabajar conmigo? Envíame un mensaje.</p>
+    <motion.div 
+      initial={{ opacity: 0, y: 50 }} 
+      animate={{ opacity: 1, y: 0 }} 
+      transition={{ duration: 0.8 }}
+      className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-8"
+    >
+      <h1 className="text-4xl font-bold text-gray-800">Contacto</h1>
+      <p className="text-lg text-gray-600 mt-4 max-w-2xl text-center">
+        Si deseas ponerte en contacto conmigo, puedes escribirme a través de mis redes sociales o enviarme un correo electrónico. ¡Estoy abierto a nuevas oportunidades y proyectos interesantes!
+      </p>
 
-      <form className="space-y-4 max-w-md">
-        <input type="text" placeholder="Nombre" className="w-full p-3 border rounded-lg" />
-        <input type="email" placeholder="Correo" className="w-full p-3 border rounded-lg" />
-        <textarea placeholder="Mensaje" rows="5" className="w-full p-3 border rounded-lg"></textarea>
-        <button className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-500 transition">
-          Enviar
-        </button>
-      </form>
+    {/* Sección de redes sociales */}
+    <SocialLinks />
+    </motion.div>
     </Layout>
-  )
+  );
 }

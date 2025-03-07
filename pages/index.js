@@ -1,4 +1,5 @@
 import Layout from './components/Layout'
+import SocialLinks from './components/SocialLinks';
 import Link from 'next/link'
 
 export default function Home() {
@@ -6,14 +7,7 @@ export default function Home() {
     <Layout>
     <div className="min-h-screen bg-white dark:bg-gray-900 flex flex-col items-center justify-center text-center p-4">
       {/* Navegación */}
-      <nav className="absolute top-0 left-0 w-full p-4 flex justify-between items-center">
-        <span className="text-xl font-bold text-gray-800 dark:text-white">Mi Portafolio</span>
-        <div className="space-x-4">
-          <Link href="/projects" className="text-blue-500 hover:underline">Proyectos</Link>
-          <Link href="/about" className="text-blue-500 hover:underline">Sobre mí</Link>
-          <Link href="/contact" className="text-blue-500 hover:underline">Contacto</Link>
-        </div>
-      </nav>
+
 
       {/* Contenido principal */}
       <main className="flex-1 flex flex-col items-center justify-center fade-in">
@@ -27,6 +21,8 @@ export default function Home() {
         <div className="mt-6 space-x-4">
         <Link href="/projects" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Ver Proyectos</Link>
         <Link href="/contact" className="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700">Contáctame</Link>
+      {/* Sección de redes sociales */}
+      <SocialLinks />
         </div>
       </main>
 
