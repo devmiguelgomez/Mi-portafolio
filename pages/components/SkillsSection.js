@@ -1,10 +1,11 @@
-import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNodeJs, FaGit, FaGithub, FaAws } from 'react-icons/fa'; 
+import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNodeJs, FaGit, FaGithub, FaAws, FaPython } from 'react-icons/fa'; 
 import { SiMongodb, SiNextdotjs } from 'react-icons/si';
 
 const skills = [
   { name: 'HTML5', icon: <FaHtml5 className="text-orange-600 w-12 h-12" /> },
   { name: 'CSS3', icon: <FaCss3Alt className="text-blue-600 w-12 h-12" /> },
   { name: 'JavaScript', icon: <FaJsSquare className="text-yellow-500 w-12 h-12" /> },
+  { name: 'Python', icon: <FaPython className="w-12 h-12" style={{ color: '#3776AB' }} /> },
   { name: 'React', icon: <FaReact className="text-blue-400 w-12 h-12" /> },
   { name: 'Next.js', icon: <SiNextdotjs className="text-black dark:text-white w-12 h-12" /> },
   { name: 'Node.js', icon: <FaNodeJs className="text-green-600 w-12 h-12" /> },

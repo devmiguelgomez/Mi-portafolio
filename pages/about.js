@@ -20,11 +20,13 @@ export default function About() {
         <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mb-8">
           ¡Hola! Soy Miguel Gomez, estudiante de Ingeniería de Sistemas en sexto semestre,
           técnico en sistemas y desarrollador multimedia enfocado en la creación de páginas web. 
-          Me apasiona la tecnología, la programación y el diseño de experiencias digitales.
+          Desde pequeño me  apasiona la tecnología, la programación y el diseño de experiencias digitales.
+          Una de mis virtudes es la capacidad de aprender y adaptarme a nuevas tecnologías y herramientas.
+          Gracias a esto he aprendido a utilizar tecnologías como HTML, CSS, JavaScript, React, Node.js, MongoDB, entre otras.
         </p>
         <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl">
-          Tengo conocimientos en HTML, CSS, JavaScript, React, Next.js, Node.js, Git, AWS y bases de datos SQL y MongoDB. 
           Me gusta mantenerme en constante aprendizaje para seguir mejorando mis habilidades y ofrecer soluciones innovadoras.
+          Tambien se puede decir que me gustan los retos y los desafíos, ya que me permiten crecer y mejorar como persona.
         </p>
          {/* Botones de CV con Iconos */}
          <div className="mt-6 flex flex-col md:flex-row justify-center gap-4">

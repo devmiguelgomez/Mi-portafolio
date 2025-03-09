@@ -7,24 +7,20 @@ const projects = [
     description: "Un portafolio profesional creado con Next.js y TailwindCSS.",
     tags: ["Next.js", "Tailwind CSS", "React"],
     image: "/images/proyecto1.png",
-    vercelLink: "https://miguel-gomez-portafolio.vercel.app/",
+    vercelLink: "https://devmiguelgomez.vercel.app/",
     githubLink: "https://github.com/CloritoxD/Mi-portafolio"
   },
   {
-    title: "App de Tareas",
+    title: "App de Tareas (En desarrollo)",
     description: "Aplicación para gestionar tareas con MongoDB y Node.js.",
     tags: ["Node.js", "MongoDB", "React"],
-    image: "/images/tareas-preview.png",
-    vercelLink: "https://tareas-app.vercel.app",
-    githubLink: "https://github.com/miusuario/app-tareas"
+    image: "/images/proyecto2.png",
   },
   {
-    title: "E-commerce",
+    title: "E-commerce (Proximamente)",
     description: "Tienda en línea con React y Stripe.",
-    tags: ["React", "Stripe", "Node.js"],
-    image: "/images/ecommerce-preview.png",
-    vercelLink: "https://ecommerce-app.vercel.app",
-    githubLink: "https://github.com/miusuario/ecommerce-app"
+    tags: ["React", "AWS", "Node.js", "MongoDB" ],
+    image: "/images/proyecto3.png",
   }
 ]
 

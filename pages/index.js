@@ -13,7 +13,8 @@ export default function Home() {
             Miguel Gomez
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl">
-            Soy un desarrollador web especializado en crear experiencias digitales increíbles.
+            Buscas que tu negocio se encuentre en el lugar correcto en la red? Aquí tienes la solución. Con mi experiencia en el mundo digital, puedo ayudarte a mejorar tu presencia en línea y aumentar tus ventas.
+            Ya que soy un desarrollador web especializado en crear experiencias digitales increíbles.
           </p>
 
           <div className="mt-6 space-x-4">
