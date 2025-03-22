@@ -6,11 +6,12 @@ export default function ProjectCard({ title, description, tags = [], image, verc
     <div className="relative bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg transform transition-transform hover:scale-105 hover:shadow-2xl group">
       {/* Imagen de portada */}
       {image && (
-        <div className="w-full h-48 overflow-hidden">
+        <div className="w-full h-48 relative overflow-hidden">
           <Image
             src={image}
             alt={`Preview de ${title}`}
-            layout="fill"
+            width={500}
+            height={300}
             objectFit="cover"
             className="group-hover:scale-110 transition-transform duration-300"
           />
