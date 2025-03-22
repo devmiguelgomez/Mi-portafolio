@@ -25,55 +25,143 @@
   --color-border: 55, 65, 81;
 }
 
-@layer base {
-  body {
-    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-white;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-    font-family: 'Inter', sans-serif;
-    scroll-behavior: smooth;
-  }
+/* Remover todas las directivas @layer y reemplazarlas con CSS estándar */
+html {
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+}
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold;
-  }
+body {
+  background-color: white;
+  color: rgb(17, 24, 39);
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
 
+.dark body {
+  background-color: rgb(17, 24, 39);
+  color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+@media (min-width: 768px) {
   h1 {
-    @apply text-3xl md:text-4xl;
-  }
-
-  h2 {
-    @apply text-2xl md:text-3xl;
-  }
-
-  h3 {
-    @apply text-xl md:text-2xl;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 }
 
-@layer components {
-  .btn {
-    @apply inline-flex items-center justify-center px-5 py-3 rounded-lg font-medium transition-colors duration-200;
-  }
-  
-  .btn-primary {
-    @apply bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white;
-  }
-  
-  .btn-secondary {
-    @apply bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-white;
-  }
-  
-  .card {
-    @apply bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-colors duration-300;
-  }
-  
-  .section {
-    @apply py-12 md:py-16;
-  }
+h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
 
-  .container {
-    @apply px-4 mx-auto max-w-6xl;
+@media (min-width: 768px) {
+  h2 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
+}
+
+h3 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 200ms;
+}
+
+.btn-primary {
+  background-color: rgb(37, 99, 235);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: rgb(29, 78, 216);
+}
+
+.dark .btn-primary {
+  background-color: rgb(59, 130, 246);
+}
+
+.dark .btn-primary:hover {
+  background-color: rgb(96, 165, 250);
+}
+
+.btn-secondary {
+  background-color: rgb(229, 231, 235);
+  color: rgb(17, 24, 39);
+}
+
+.btn-secondary:hover {
+  background-color: rgb(209, 213, 219);
+}
+
+.dark .btn-secondary {
+  background-color: rgb(55, 65, 81);
+  color: white;
+}
+
+.dark .btn-secondary:hover {
+  background-color: rgb(75, 85, 99);
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 300ms;
+}
+
+.dark .card {
+  background-color: rgb(31, 41, 55);
+}
+
+.section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 72rem;
 }
 
 /* Animaciones */
