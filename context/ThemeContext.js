@@ -1,43 +1,43 @@
 import React, { createContext, useState, useEffect } from 'react';
 
-export const ThemeContext = createContext();
+export const ThemeContext = createContext({
+  darkMode: false,
+  toggleTheme: () => {}
+});
 
 export const ThemeProvider = ({ children }) => {
-  // Inicializar con null para evitar discrepancias de hidratación
-  const [darkMode, setDarkMode] = useState(null);
+  const [darkMode, setDarkMode] = useState(false);
   const [mounted, setMounted] = useState(false);
 
-  // Este efecto se ejecuta solo en el cliente
   useEffect(() => {
     setMounted(true);
-    
-    // Verificar preferencia guardada
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      setDarkMode(savedTheme === 'dark');
-    } else {
-      // Detectar preferencia del sistema
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setDarkMode(prefersDark);
+    try {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        setDarkMode(savedTheme === 'dark');
+      } else {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        setDarkMode(prefersDark);
+      }
+    } catch (error) {
+      console.error('Error accediendo a localStorage:', error);
     }
   }, []);
 
-  // Este efecto aplica el tema cuando cambia
   useEffect(() => {
-    if (darkMode === null || !mounted) return;
+    if (!mounted) return;
     
-    document.documentElement.classList.toggle('dark', darkMode);
-    localStorage.setItem('theme', darkMode ? 'dark' : 'light');
+    try {
+      document.documentElement.classList.toggle('dark', darkMode);
+      localStorage.setItem('theme', darkMode ? 'dark' : 'light');
+    } catch (error) {
+      console.error('Error al modificar el tema:', error);
+    }
   }, [darkMode, mounted]);
 
   const toggleTheme = () => {
     setDarkMode(prevMode => !prevMode);
   };
-
-  // Si no estamos montados aún, renderizamos sin clase dark para evitar flash
-  if (!mounted) {
-    return <>{children}</>;
-  }
 
   return (
     <ThemeContext.Provider value={{ darkMode, toggleTheme }}>

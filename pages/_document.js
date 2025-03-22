@@ -14,13 +14,15 @@ export default function Document() {
             __html: `
               (function() {
                 try {
-                  var mode = localStorage.getItem('theme');
-                  var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
-                  if (!mode && supportDarkMode) document.documentElement.classList.add('dark');
-                  if (mode === 'dark') document.documentElement.classList.add('dark');
+                  var storedTheme = localStorage.getItem('theme');
+                  if (storedTheme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                  } else if (!storedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.classList.add('dark');
+                  }
                 } catch (e) {}
               })();
-            `
+            `,
           }}
         />
         <Main />
