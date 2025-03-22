@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import ThemeToggle from './ThemeToggle';
 import { useContext } from 'react';
-import { ThemeContext } from '../context/ThemeContext';
+import { ThemeContext } from '../../context/ThemeContext';
 
 export default function Layout({ children, title = 'Mi Portafolio' }) {
   const { darkMode } = useContext(ThemeContext);
