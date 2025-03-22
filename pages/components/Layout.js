@@ -8,7 +8,7 @@ export default function Layout({ children, title = 'Mi Portafolio' }) {
   const { darkMode } = useContext(ThemeContext);
   
   return (
-    <div className="flex flex-col min-h-screen bg-white dark:bg-gray-900">
+    <div className="flex flex-col min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
       <Head>
         <title>{title}</title>
         <meta name="description" content="Mi portafolio profesional" />
@@ -71,7 +71,7 @@ export default function Layout({ children, title = 'Mi Portafolio' }) {
       <footer className="bg-gray-100 dark:bg-gray-800 transition-colors duration-300">
         <div className="container mx-auto px-4 py-6">
           <p className="text-center text-gray-600 dark:text-gray-400">
-            © {new Date().getFullYear()} Mi Portafolio. Todos los derechos reservados.
+            © {new Date().getFullYear()} Hecho con ❤️ por Miguel Gómez.
           </p>
         </div>
       </footer>
