@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Layout from '../components/Layout';
 import SocialLinks from '../components/SocialLinks';
 import SkillsSection from '../components/SkillsSection';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -36,12 +37,11 @@ export default function Home() {
             >
               Descargar CV
             </a>
-            <a
-              href="/contact"
-              className="px-6 py-3 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-white rounded-lg transition-colors shadow-md"
-            >
-              Contáctame
-            </a>
+            <Link href="/contact">
+              <a className="px-6 py-3 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-white rounded-lg transition-colors shadow-md">
+                Contáctame
+              </a>
+            </Link>
           </div>
         </div>
       </section>

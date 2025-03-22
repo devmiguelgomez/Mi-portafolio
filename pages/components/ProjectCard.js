@@ -1,4 +1,5 @@
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
+import Image from 'next/image';
 
 export default function ProjectCard({ title, description, tags = [], image, vercelLink, githubLink }) {
   return (
@@ -6,10 +7,12 @@ export default function ProjectCard({ title, description, tags = [], image, verc
       {/* Imagen de portada */}
       {image && (
         <div className="w-full h-48 overflow-hidden">
-          <img
+          <Image
             src={image}
             alt={`Preview de ${title}`}
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+            layout="fill"
+            objectFit="cover"
+            className="group-hover:scale-110 transition-transform duration-300"
           />
         </div>
       )}
