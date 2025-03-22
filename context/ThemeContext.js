@@ -11,33 +11,45 @@ export const ThemeProvider = ({ children }) => {
 
   useEffect(() => {
     setMounted(true);
+    // Intentar recuperar preferencia de tema
     try {
       const savedTheme = localStorage.getItem('theme');
-      if (savedTheme) {
-        setDarkMode(savedTheme === 'dark');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      
+      if (savedTheme === 'dark') {
+        setDarkMode(true);
+      } else if (savedTheme === 'light') {
+        setDarkMode(false);
       } else {
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         setDarkMode(prefersDark);
       }
     } catch (error) {
-      console.error('Error accediendo a localStorage:', error);
+      console.error('Error al acceder a localStorage:', error);
     }
   }, []);
 
   useEffect(() => {
     if (!mounted) return;
     
+    // Aplicar tema
+    document.documentElement.classList.toggle('dark', darkMode);
+    
+    // Guardar preferencia
     try {
-      document.documentElement.classList.toggle('dark', darkMode);
       localStorage.setItem('theme', darkMode ? 'dark' : 'light');
     } catch (error) {
-      console.error('Error al modificar el tema:', error);
+      console.error('Error al guardar tema en localStorage:', error);
     }
   }, [darkMode, mounted]);
 
   const toggleTheme = () => {
     setDarkMode(prevMode => !prevMode);
   };
+
+  // SSR safe rendering
+  if (!mounted) {
+    return <>{children}</>;
+  }
 
   return (
     <ThemeContext.Provider value={{ darkMode, toggleTheme }}>
