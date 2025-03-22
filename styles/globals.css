@@ -54,4 +54,100 @@ body {
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Variables para el tema claro */
+  --color-bg-primary: 255, 255, 255;
+  --color-bg-secondary: 249, 250, 251;
+  --color-text-primary: 17, 24, 39;
+  --color-text-secondary: 75, 85, 99;
+  --color-accent: 37, 99, 235;
+  --color-accent-hover: 29, 78, 216;
+  --color-border: 229, 231, 235;
+}
+
+.dark {
+  /* Variables para el tema oscuro */
+  --color-bg-primary: 17, 24, 39;
+  --color-bg-secondary: 31, 41, 55;
+  --color-text-primary: 243, 244, 246;
+  --color-text-secondary: 156, 163, 175;
+  --color-accent: 59, 130, 246;
+  --color-accent-hover: 96, 165, 250;
+  --color-border: 55, 65, 81;
+}
+
+@layer base {
+  body {
+    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-white;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-5 py-3 rounded-lg font-medium transition-colors duration-200;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-white;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-colors duration-300;
+  }
+  
+  .section {
+    @apply py-12 md:py-16;
+  }
+
+  .container {
+    @apply px-4 mx-auto max-w-6xl;
+  }
+}
+
+/* Animaciones */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-in-out;
+}
+
+@keyframes slideUp {
+  0% { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 

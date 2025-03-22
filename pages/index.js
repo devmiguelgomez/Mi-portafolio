@@ -1,59 +1,53 @@
-import Layout from './components/Layout'
-import SocialLinks from './components/SocialLinks'
-import SkillsSection from './components/SkillsSection'
-import Link from 'next/link'
+import Image from 'next/image';
+import Layout from '../components/Layout';
+import SocialLinks from '../components/SocialLinks';
+import SkillsSection from '../components/SkillsSection';
 
 export default function Home() {
   return (
-    <Layout>
-      <div className="min-h-screen bg-white dark:bg-gray-900 flex flex-col items-center justify-center text-center p-4">
-        {/* Contenido principal */}
-        <main className="flex-1 flex flex-col items-center justify-center fade-in">
-          <h1 className="text-5xl md:text-7xl font-extrabold text-gray-800 dark:text-white mb-4">
-            Miguel Gomez
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl">
-            Buscas que tu negocio se encuentre en el lugar correcto en la red? Aquí tienes la solución. Con mi experiencia en el mundo digital, puedo ayudarte a mejorar tu presencia en línea y aumentar tus ventas.
-            Ya que soy un desarrollador web especializado en crear experiencias digitales increíbles.
-          </p>
-
-          <div className="mt-6 space-x-4">
-            <Link href="/projects" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Ver Proyectos</Link>
-            <Link href="/contact" className="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700">Contáctame</Link>
+    <Layout title="Inicio | Mi Portafolio">
+      <section className="py-12 md:py-20">
+        <div className="flex flex-col items-center text-center">
+          {/* Logo/Imagen antes del nombre */}
+          <div className="mb-8 relative w-36 h-36 md:w-40 md:h-40 overflow-hidden rounded-full border-4 border-blue-500 dark:border-blue-400 shadow-lg">
+            <Image
+              src="/images/mi-foto.jpg"
+              alt="Mi foto"
+              layout="fill"
+              objectFit="cover"
+              priority
+              className="transition-transform duration-500 hover:scale-110"
+            />
           </div>
-
-          {/* Redes sociales */}
-          <SocialLinks />
-        </main>
-
-        {/* Skills Section - Aquí es donde lo agregamos */}
-        <SkillsSection />
-
-        {/* Footer */}
-        <footer className="py-4 text-gray-500 dark:text-gray-400 text-sm">
-          Hecho con 💗 por Miguel Gomez.
-        </footer>
-
-        {/* Animación de fade-in */}
-        <style jsx>{`
-          .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 1.2s ease-out forwards;
-          }
-
-          @keyframes fadeIn {
-            from {
-              opacity: 0;
-              transform: translateY(20px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-        `}</style>
-      </div>
+          
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
+            Miguel Gómez
+          </h1>
+          
+          <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 max-w-2xl">
+            Desarrollador Web & Diseñador UI/UX
+          </p>
+          
+          <div className="flex flex-wrap justify-center gap-4">
+            <a
+              href="/miguel-gomez-cv.pdf"
+              download
+              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white rounded-lg transition-colors shadow-md"
+            >
+              Descargar CV
+            </a>
+            <a
+              href="/contact"
+              className="px-6 py-3 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-white rounded-lg transition-colors shadow-md"
+            >
+              Contáctame
+            </a>
+          </div>
+        </div>
+      </section>
+      
+      <SocialLinks />
+      <SkillsSection />
     </Layout>
-  )
+  );
 }
