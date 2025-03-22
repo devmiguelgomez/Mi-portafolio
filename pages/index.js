@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import Layout from './components/Layout';
-import SocialLinks from './components/SocialLinks';
-import SkillsSection from './components/SkillsSection';
+import Layout from '../components/Layout';
+import SocialLinks from '../components/SocialLinks';
+import SkillsSection from '../components/SkillsSection';
 
 export default function Home() {
   return (

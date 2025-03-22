@@ -1,5 +1,5 @@
-import Layout from './components/Layout'
-import ProjectCard from './components/ProjectCard'
+import Layout from '../components/Layout'
+import ProjectCard from '../components/ProjectCard'
 
 const projects = [
   {

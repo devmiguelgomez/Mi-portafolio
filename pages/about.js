@@ -1,4 +1,4 @@
-import Layout from './components/Layout'
+import Layout from '../components/Layout'
 import Image from 'next/image'
 import { FaEye, FaDownload } from 'react-icons/fa';
 export default function About() {

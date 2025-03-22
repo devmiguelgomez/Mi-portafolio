@@ -1,6 +1,6 @@
-import Layout from './components/Layout'
+import Layout from '../components/Layout'
 import { useState } from 'react'
-import SocialLinks from './components/SocialLinks'
+import SocialLinks from '../components/SocialLinks'
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
