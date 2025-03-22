@@ -18,31 +18,41 @@ export default function Layout({ children, title = 'Mi Portafolio' }) {
       <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-sm dark:shadow-gray-800 transition-colors duration-300">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <Link href="/" className="text-xl font-bold text-gray-900 dark:text-white">
-              Mi Portafolio
+            <Link href="/">
+              <span className="text-xl font-bold text-gray-900 dark:text-white cursor-pointer">
+                Mi Portafolio
+              </span>
             </Link>
             
             <div className="flex items-center space-x-6">
               <nav>
                 <ul className="hidden md:flex space-x-6">
                   <li>
-                    <Link href="/" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                      Inicio
+                    <Link href="/">
+                      <span className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer">
+                        Inicio
+                      </span>
                     </Link>
                   </li>
                   <li>
-                    <Link href="/about" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                      Sobre Mí
+                    <Link href="/about">
+                      <span className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer">
+                        Sobre Mí
+                      </span>
                     </Link>
                   </li>
                   <li>
-                    <Link href="/projects" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                      Proyectos
+                    <Link href="/projects">
+                      <span className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer">
+                        Proyectos
+                      </span>
                     </Link>
                   </li>
                   <li>
-                    <Link href="/contact" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                      Contacto
+                    <Link href="/contact">
+                      <span className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer">
+                        Contacto
+                      </span>
                     </Link>
                   </li>
                 </ul>

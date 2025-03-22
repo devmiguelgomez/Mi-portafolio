@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Layout from './components/Layout';
 import SocialLinks from './components/SocialLinks';
 import SkillsSection from './components/SkillsSection';
-import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -30,20 +29,7 @@ export default function Home() {
             Desarrollador Web & Diseñador UI/UX
           </p>
           
-          <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href="/miguel-gomez-cv.pdf"
-              download
-              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white rounded-lg transition-colors shadow-md"
-            >
-              Descargar CV
-            </a>
-            <Link href="/contact">
-              <span className="px-6 py-3 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-white rounded-lg transition-colors shadow-md cursor-pointer">
-                Contáctame
-              </span>
-            </Link>
-          </div>
+          {/* Los botones han sido eliminados */}
         </div>
       </section>
       
