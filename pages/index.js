@@ -25,16 +25,15 @@ export default function Home() {
             Miguel Gómez
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 max-w-2xl">
+          <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-3 max-w-2xl">
             Desarrollador Web & Diseñador UI/UX
           </p>
           
-          {/* Los botones han sido eliminados */}
+          {/* Iconos sociales integrados directamente debajo del nombre */}
+          <SocialLinks />
         </div>
+        <SkillsSection />
       </section>
-      
-      <SocialLinks />
-      <SkillsSection />
     </Layout>
   );
 }
