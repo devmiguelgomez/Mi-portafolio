@@ -18,10 +18,10 @@ const projects = [
     githubLink: "https://github.com/devmiguelgomez/Mi-portafolio"
   },
   {
-    title: "App de Tareas (En desarrollo)",
-    description: "Aplicación para gestionar tareas con MongoDB y Node.js.",
+    title: "App de Tareas (Task Management App)",
+    description: "Aplicación para gestionar tareas con Base de datos, mensajes automaticos para la notificacion y una interfaz agradable.",
     tags: ["Node.js", "MongoDB", "React", "Tailwind CSS", "Express",   "nodemailer", "vite", "node-cron"],
-    image: "/images/proyecto2.png",
+    image: "/images/proyecto2.jpg",
     vercelLink: "https://pp-task-chi.vercel.app/",
     githubLink: "https://github.com/devmiguelgomez/app-task"
   },
