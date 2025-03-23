@@ -15,13 +15,15 @@ const projects = [
     tags: ["Next.js", "Tailwind CSS", "React"],
     image: "/images/proyecto1.png",
     vercelLink: "https://devmiguelgomez.vercel.app/",
-    githubLink: "https://github.com/CloritoxD/Mi-portafolio"
+    githubLink: "https://github.com/devmiguelgomez/Mi-portafolio"
   },
   {
     title: "App de Tareas (En desarrollo)",
     description: "Aplicación para gestionar tareas con MongoDB y Node.js.",
-    tags: ["Node.js", "MongoDB", "React"],
+    tags: ["Node.js", "MongoDB", "React", "Tailwind CSS", "Express",   "nodemailer", "vite", "node-cron"],
     image: "/images/proyecto2.png",
+    vercelLink: "https://pp-task-chi.vercel.app/",
+    githubLink: "https://github.com/devmiguelgomez/app-task"
   },
   {
     title: "E-commerce (Proximamente)",
