@@ -121,6 +121,9 @@ export default function Home() {
             <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-3 max-w-2xl">
               Desarrollador MERN Stack & Diseñador UI/UX
             </p>
+            <p className="text-lg text-gray-600 dark:text-gray-400 mb-6 max-w-2xl">
+              Transformando ideas en experiencias digitales 🚀
+            </p>
 
             {/* Iconos sociales integrados directamente debajo del nombre */}
             <SocialLinks />
@@ -147,40 +150,20 @@ export default function Home() {
               </div>
               
               <div className="max-w-2xl">
-                <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-                  ¡Hola! Soy Miguel Gomez, estudiante de Ingeniería de Sistemas en sexto semestre,
-                  técnico en sistemas y desarrollador multimedia enfocado en la creación de páginas web. 
-                  Desde pequeño me apasiona la tecnología, la programación y el diseño de experiencias digitales.
-                </p>
-                
-                <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-                  Una de mis virtudes es la capacidad de aprender y adaptarme a nuevas tecnologías y herramientas.
-                  Gracias a esto he aprendido a utilizar tecnologías como HTML, CSS, JavaScript, React, Node.js, MongoDB, entre otras.
-                  Me gusta mantenerme en constante aprendizaje para seguir mejorando mis habilidades y ofrecer soluciones innovadoras.
-                </p>
-              </div>
-              
-              {/* Botones de CV con Iconos */}
-              <div className="mt-4 flex flex-col sm:flex-row justify-center gap-4">
-                <a 
-                  href="/miguel-gomez-cv.pdf" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition transform hover:scale-105 flex items-center justify-center gap-2 shadow-lg"
-                >
-                  <FaEye className="w-5 h-5" /> Ver CV
-                </a>
+              <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
+              🚀 ¡Hola! Soy Miguel Gómez, estudiante de Ingeniería de Sistemas en sexto semestre, técnico en sistemas y desarrollador multimedia enfocado en la creación de páginas web.  
+              💡 Desde pequeño me ha apasionado la tecnología, la programación y el diseño de experiencias digitales.  
+              🖥️ Disfruto aprender y adaptarme a nuevas herramientas, lo que me ha permitido trabajar con tecnologías como HTML, CSS, JavaScript, React, Node.js y MongoDB.  
+              📚 Siempre busco nuevos desafíos que me ayuden a crecer y ofrecer soluciones innovadoras.  
+              </p>
 
-                <a 
-                  href="/miguel-gomez-cv.pdf" 
-                  download="Miguel-Gomez-CV.pdf"
-                  className="px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition transform hover:scale-105 flex items-center justify-center gap-2 shadow-lg"
-                >
-                  <FaDownload className="w-5 h-5" /> Descargar CV
-                </a>
+              <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
+              Me considero una persona curiosa y adaptable, siempre dispuesta a aprender algo nuevo. Gracias a esto, he adquirido experiencia en diversas tecnologías y metodologías de desarrollo.  
+              Mi objetivo es seguir mejorando mis habilidades y aportar valor a cada proyecto en el que participe.  
+              </p>
               </div>
-            </div>
-          </div>
+              </div>
+              </div>
         </section>
 
         {/* SECCIÓN PROYECTOS */}
