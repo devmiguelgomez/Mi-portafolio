@@ -160,7 +160,7 @@ export default function Layout({ children, title = 'Mi Portafolio', aboutRef, pr
               <p className="text-gray-600 dark:text-gray-400 mb-4">
                 Desarrollador MERN Stack especializado en crear aplicaciones web modernas con React, Node.js, MongoDB y Express.
               </p>
-              <SocialLinks />
+              <SocialLinks size="small" />
             </div>
             
             <div>

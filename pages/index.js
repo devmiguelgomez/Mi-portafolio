@@ -8,6 +8,7 @@ import CertificationsSection from '../components/CertificationsSection';
 import { FaDownload, FaEye } from 'react-icons/fa';
 import Head from 'next/head';
 import { sendEmail } from '../utils/emailService';
+import GradientTitle from '../components/GradientTitle';
 
 // Datos de proyectos
 const projects = [
@@ -111,20 +112,23 @@ export default function Home() {
                 className="transition-transform duration-500 hover:scale-110"
               />
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 leading-tight pb-1 line-height-fixed">
               Miguel Gómez
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-3 max-w-2xl">
               Desarrollador MERN Stack & Diseñador UI/UX
             </p>
-            <p className="text-lg text-gray-600 dark:text-gray-400 mb-6 max-w-2xl">
+            <p className="text-lg text-gray-600 dark:text-gray-400 mb-2 max-w-2xl">
               Transformando ideas en experiencias digitales 🚀
             </p>
 
-            {/* Iconos sociales integrados directamente debajo del nombre */}
-            <SocialLinks />
+            {/* Iconos sociales mejorados - usando size "default" */}
+            <div className="mt-4">
+              <SocialLinks />
+            </div>
           </div>
+          
           <SkillsSection />
         </section>
 
@@ -184,7 +188,7 @@ export default function Home() {
           <CertificationsSection />
         </div>
 
-        {/* SECCIÓN CONTACTO */}
+        {/* SECCIÓN CONTACTO - usar iconos grandes */}
         <section ref={contactRef} id="contact" className="py-16 min-h-screen flex items-center bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto max-w-4xl px-4">
             <h2 className="text-4xl font-extrabold text-gray-800 dark:text-white mb-8 text-center">
@@ -261,7 +265,7 @@ export default function Home() {
             <div className="text-center">
               <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-4">Mis Redes Sociales</h3>
               <div className="flex justify-center">
-                <SocialLinks />
+                <SocialLinks size="large" />
               </div>
             </div>
           </div>
