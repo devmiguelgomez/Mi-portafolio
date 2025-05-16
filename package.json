@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "framer-motion": "^12.4.10",
+    "@emailjs/browser": "^4.4.1",
+    "@tailwindcss/typography": "^0.5.16",
+    "framer-motion": "^12.12.1",
     "next": "15.2.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

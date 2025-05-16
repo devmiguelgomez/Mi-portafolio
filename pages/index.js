@@ -7,6 +7,7 @@ import ProjectCard from '../components/ProjectCard';
 import CertificationsSection from '../components/CertificationsSection';
 import { FaDownload, FaEye } from 'react-icons/fa';
 import Head from 'next/head';
+import { sendEmail } from '../utils/emailService';
 
 // Datos de proyectos
 const projects = [
@@ -54,19 +55,15 @@ export default function Home() {
     e.preventDefault();
     setStatus('Enviando...');
 
-    const response = await fetch('https://formspree.io/f/xvgkplvj', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
-    });
+    const result = await sendEmail(formData);
 
-    if (response.ok) {
-      setStatus('Mensaje enviado con éxito! 🎉');
+    if (result.success) {
+      setStatus(result.message);
       setSuccess(true);
       setFormData({ name: '', email: '', message: '' });
       setTimeout(() => setSuccess(false), 3000);
     } else {
-      setStatus('Hubo un error, inténtalo de nuevo.');
+      setStatus(result.message);
     }
   };
 
@@ -239,6 +236,10 @@ export default function Home() {
                     className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:text-white"
                   ></textarea>
                 </div>
+
+                {/* Campo oculto para el reenvío */}
+                <input type="hidden" name="_replyto" value={formData.email} />
+                <input type="hidden" name="_subject" value="Nuevo mensaje desde el portafolio" />
 
                 <button
                   type="submit"

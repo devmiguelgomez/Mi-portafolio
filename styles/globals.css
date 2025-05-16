@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,184 +9,284 @@
   --color-bg-secondary: 249, 250, 251;
   --color-text-primary: 17, 24, 39;
   --color-text-secondary: 75, 85, 99;
-  --color-accent: 37, 99, 235;
-  --color-accent-hover: 29, 78, 216;
+  --color-accent: 79, 70, 229;
+  --color-accent-hover: 67, 56, 202;
   --color-border: 229, 231, 235;
+  
+  /* Nuevas variables de tema claro */
+  --color-success: 16, 185, 129;
+  --color-warning: 234, 179, 8;
+  --color-danger: 239, 68, 68;
+  --color-info: 6, 182, 212;
+  --gradient-primary: linear-gradient(135deg, rgba(79, 70, 229, 1) 0%, rgba(99, 102, 241, 1) 100%);
 }
 
 .dark {
   /* Variables para el tema oscuro */
-  --color-bg-primary: 17, 24, 39;
-  --color-bg-secondary: 31, 41, 55;
+  --color-bg-primary: 15, 23, 42; /* Más oscuro y profesional */
+  --color-bg-secondary: 30, 41, 59;
   --color-text-primary: 243, 244, 246;
   --color-text-secondary: 156, 163, 175;
-  --color-accent: 59, 130, 246;
-  --color-accent-hover: 96, 165, 250;
+  --color-accent: 99, 102, 241;
+  --color-accent-hover: 129, 140, 248;
   --color-border: 55, 65, 81;
+  
+  /* Nuevas variables de tema oscuro */
+  --color-success: 16, 185, 129;
+  --color-warning: 245, 158, 11;
+  --color-danger: 239, 68, 68;
+  --color-info: 14, 165, 233;
+  --gradient-primary: linear-gradient(135deg, rgba(99, 102, 241, 1) 0%, rgba(129, 140, 248, 1) 100%);
 }
 
-/* Remover todas las directivas @layer y reemplazarlas con CSS estándar */
+/* Configuraciones base mejoradas */
 html {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background-color: white;
-  color: rgb(17, 24, 39);
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  background-color: rgb(var(--color-bg-primary));
+  color: rgb(var(--color-text-primary));
+  transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+  line-height: 1.6;
 }
 
-.dark body {
-  background-color: rgb(17, 24, 39);
-  color: white;
-}
-
+/* Mejora de tipografía */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
 }
 
 h1 {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  margin-bottom: 1.5rem;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 800;
 }
 
 @media (min-width: 768px) {
   h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+}
+
+h2 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  h2 {
     font-size: 2.25rem;
     line-height: 2.5rem;
   }
 }
 
-h2 {
+h3 {
   font-size: 1.5rem;
   line-height: 2rem;
-}
-
-@media (min-width: 768px) {
-  h2 {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-}
-
-h3 {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  margin-bottom: 0.75rem;
 }
 
 @media (min-width: 768px) {
   h3 {
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
   }
 }
 
+/* Componentes mejorados */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
   font-weight: 500;
-  transition-property: background-color, border-color, color, fill, stroke;
-  transition-duration: 200ms;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-size: 1rem;
+  letter-spacing: 0.025em;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.btn:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(10, 10);
+  opacity: 0;
+  transition: transform 0.5s, opacity 1s;
+}
+
+.btn:active:after {
+  transform: scale(0, 0);
+  opacity: 0.3;
+  transition: 0s;
 }
 
 .btn-primary {
-  background-color: rgb(37, 99, 235);
+  background-image: var(--gradient-primary);
   color: white;
+  border: none;
 }
 
 .btn-primary:hover {
-  background-color: rgb(29, 78, 216);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
 }
 
-.dark .btn-primary {
-  background-color: rgb(59, 130, 246);
-}
-
-.dark .btn-primary:hover {
-  background-color: rgb(96, 165, 250);
+.btn-primary:active {
+  transform: translateY(0);
 }
 
 .btn-secondary {
-  background-color: rgb(229, 231, 235);
-  color: rgb(17, 24, 39);
+  background-color: rgb(var(--color-bg-secondary));
+  color: rgb(var(--color-text-primary));
+  border: 1px solid rgb(var(--color-border));
 }
 
 .btn-secondary:hover {
-  background-color: rgb(209, 213, 219);
+  background-color: rgba(var(--color-bg-secondary), 0.8);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
 }
 
-.dark .btn-secondary {
-  background-color: rgb(55, 65, 81);
-  color: white;
+.btn-secondary:active {
+  transform: translateY(0);
 }
 
-.dark .btn-secondary:hover {
-  background-color: rgb(75, 85, 99);
-}
-
+/* Componente de tarjeta mejorado */
 .card {
-  background-color: white;
-  border-radius: 0.5rem;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  background-color: rgb(var(--color-bg-primary));
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   overflow: hidden;
-  transition-property: background-color, border-color, color, fill, stroke;
-  transition-duration: 300ms;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(var(--color-border), 0.5);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.dark .card {
-  background-color: rgb(31, 41, 55);
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
+/* Layout containers */
 .section {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding: 5rem 0;
+  position: relative;
 }
 
 @media (min-width: 768px) {
   .section {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding: 6rem 0;
   }
 }
 
 .container {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  width: 100%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   margin-left: auto;
   margin-right: auto;
-  max-width: 72rem;
+  max-width: 80rem;
 }
 
-/* Animaciones */
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+/* Animaciones mejoradas */
 .fade-in {
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
+  animation: fadeIn 1s ease-in-out;
 }
 
 .slide-up {
-  animation: slideUp 0.5s ease-in-out;
+  animation: slideUp 0.6s ease-in-out;
 }
 
-@keyframes slideUp {
-  0% { 
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% { 
-    opacity: 1;
-    transform: translateY(0);
-  }
+.slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+/* Keyframes han sido movidos a tailwind.config.js */
+
+/* Estilos para secciones de habilidades */
+.skill-icon {
+  transition: all 0.3s ease;
+}
+
+.skill-icon:hover {
+  transform: translateY(-5px) scale(1.1);
+}
+
+/* Efectos de brillo y glassmorphismo */
+.glass {
+  background: rgba(var(--color-bg-primary), 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(var(--color-border), 0.3);
+}
+
+/* Efectos de scroll suave para imágenes */
+.img-scroll {
+  transition: transform 0.5s ease;
+}
+
+.img-scroll:hover {
+  transform: scale(1.05);
+}
+
+/* Efectos para los campos de formulario */
+input:focus, textarea:focus {
+  box-shadow: 0 0 0 2px rgba(var(--color-accent), 0.3);
+  outline: none;
 }
 
 
