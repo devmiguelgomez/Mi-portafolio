@@ -3,8 +3,8 @@ const config = {
   plugins: {
     'tailwindcss/nesting': {},
     tailwindcss: {},
-    autoprefixer: {},
-    ...(process.env.NODE_ENV === 'production' ? { cssnano: {} } : {})
+    autoprefixer: {}
+    // Removido cssnano para evitar errores de dependencia
   },
 };
 
