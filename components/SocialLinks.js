@@ -46,7 +46,7 @@ export default function SocialLinks({ size = "default" }) {
     {
       name: "LinkedIn",
       icon: <FaLinkedin size={iconSize} />,
-      url: "https://www.linkedin.com/in/tu-perfil-linkedin/",
+      url: "https://www.linkedin.com/in/devmiguelgomez/",
       color: "hover:bg-blue-600",
       ariaLabel: "Visita mi perfil de LinkedIn"
     },
