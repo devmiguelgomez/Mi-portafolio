@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Miguel Gómez | Desarrollador Full Stack",
   description:
     "Desarrollo de sitios web, aplicaciones web, integración de APIs, paneles administrativos y automatización de procesos.",
-    generator: 'v0.dev'
+    generator: 'Miguel Gómez',
 }
 
 export default function RootLayout({

@@ -30,7 +30,7 @@ const projects = [
       "Panel administrativo para visualización de métricas de ventas y gestión de inventario para una empresa de retail con múltiples sucursales.",
     image: "/Dashboard-empresarial.png?height=400&width=600",
     tags: ["React", "Express", "PostgreSQL", "Chart.js"],
-    link: "#",
+    link: "",
     highlights: ["métricas de ventas", "gestión de inventario", "múltiples sucursales"],
   },
   {

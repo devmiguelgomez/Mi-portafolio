@@ -7,6 +7,18 @@ import { Menu, X, Code } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ThemeToggle } from "@/components/theme-toggle"
 
+// Función para normalizar los enlaces (eliminar acentos y caracteres especiales)
+const normalizeLink = (text: string): string => {
+  return text
+    .toLowerCase()
+    .replace("í", "i")
+    .replace("á", "a")
+    .replace("é", "e")
+    .replace("ó", "o")
+    .replace("ú", "u")
+    .replace(" ", "-");
+}
+
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -52,7 +64,7 @@ export function Header() {
               transition={{ duration: 0.5, delay: 0.1 * index }}
             >
               <Link
-                href={`#${item.toLowerCase().replace(" ", "-")}`}
+                href={`#${normalizeLink(item)}`}
                 className="text-sm font-medium hover:text-primary transition-colors"
               >
                 {item}
@@ -110,7 +122,7 @@ export function Header() {
                 transition={{ duration: 0.3, delay: 0.05 * index }}
               >
                 <Link
-                  href={`#${item.toLowerCase().replace(" ", "-")}`}
+                  href={`#${normalizeLink(item)}`}
                   className="text-sm font-medium block py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >

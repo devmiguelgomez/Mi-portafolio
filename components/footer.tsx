@@ -9,6 +9,15 @@ import { useTheme } from "next-themes"
 export function Footer() {
   const { theme } = useTheme()
 
+  // Mapeo correcto de los nombres de menú a los IDs de sección
+  const menuToIdMap = {
+    "Servicios": "servicios",
+    "Sobre Mí": "sobre-mi", // Aseguramos que coincida exactamente con el ID de la sección
+    "Proyectos": "proyectos",
+    "Testimonios": "testimonios",
+    "Contacto": "contacto"
+  };
+
   return (
     <footer className={`border-t ${theme === "light" ? "bg-muted/10" : "bg-muted/30"}`}>
       <div className="container py-12">
@@ -55,7 +64,7 @@ export function Footer() {
               {["Servicios", "Sobre Mí", "Proyectos", "Testimonios", "Contacto"].map((item, index) => (
                 <motion.div key={item} whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                   <Link
-                    href={`#${item.toLowerCase().replace(" ", "-")}`}
+                    href={`#${menuToIdMap[item as keyof typeof menuToIdMap] || item.toLowerCase().replace(" ", "-").replace("í", "i")}`}
                     className="text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {item}
