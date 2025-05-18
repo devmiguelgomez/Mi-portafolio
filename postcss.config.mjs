@@ -1,10 +1,7 @@
-// Actualizar este archivo
+/** @type {import('postcss-load-config').Config} */
 const config = {
   plugins: {
-    'tailwindcss/nesting': {},
     tailwindcss: {},
-    autoprefixer: {}
-    // Removido cssnano para evitar errores de dependencia
   },
 };
 
