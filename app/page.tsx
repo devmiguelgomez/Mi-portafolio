@@ -16,6 +16,7 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
+        <Testimonials />
         <Services />
         <Cta
           title="¿Necesitas un desarrollador para tu próximo proyecto?"
@@ -31,7 +32,6 @@ export default function Home() {
           buttonText="Contáctame"
           buttonLink="#contacto"
         />
-        <Testimonials />
         <Contact />
       </main>
       <Footer />

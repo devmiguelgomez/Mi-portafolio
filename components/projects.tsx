@@ -16,13 +16,13 @@ import { memo } from "react"
 
 const projects = [
   {
-    title: "Plataforma E-learning(Pronto)",
+    title: "Study Buddy - Plataforma Educativa Inteligente",
     description:
-      "Desarrollo de una plataforma completa de cursos online con sistema de pagos, gestión de contenido y analíticas para una academia de programación.",
-    image: "/coming-soon.jpg?height=400&width=600",
-    tags: ["Next.js", "Node.js", "MongoDB", "Stripe"],
-    link: "#",
-    highlights: ["cursos online", "sistema de pagos", "analíticas"],
+      "Plataforma educativa interactiva que utiliza IA para proporcionar explicaciones personalizadas y permite gestionar documentos académicos.",
+    image: "/StudyBuddy.png?height=400&width=600",
+    tags: ["React", "Node.js", "MongoDB", "Gemini AI", "Tailwind CSS"],
+    link: "https://study-ia-fronted.vercel.app/",
+    highlights: ["plataforma educativa", "explicaciones personalizadas", "gestión de documentos", "IA integrada"],
   },
   {
     title: "Dashboard Empresarial(En desarrollo)",

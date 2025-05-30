@@ -61,7 +61,7 @@ export const Contact = memo(function Contact() {
           </p>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="max-w-2xl mx-auto">
           <AnimatedSection delay={0.2}>
             <Card
               className={`border ${
@@ -174,73 +174,6 @@ export const Contact = memo(function Contact() {
                 )}
               </CardContent>
             </Card>
-          </AnimatedSection>
-
-          <AnimatedSection delay={0.4}>
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-2xl font-bold mb-6">
-                  Información de <Highlight type="primary">contacto</Highlight>
-                </h3>
-                <div className="space-y-6">
-                  <motion.div className="flex items-start gap-4" whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                    <div className={`${theme === "light" ? "bg-primary/5" : "bg-primary/10"} p-3 rounded-full`}>
-                      <Mail className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium">Email</h4>
-                      <p className="text-muted-foreground">devmiguelgomez@gmail.com</p>
-                    </div>
-                  </motion.div>
-
-                  <motion.div className="flex items-start gap-4" whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                    <div className={`${theme === "light" ? "bg-primary/5" : "bg-primary/10"} p-3 rounded-full`}>
-                      <MapPin className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium">Ubicación</h4>
-                      <p className="text-muted-foreground">
-                        Cali, Colombia (Disponible para <Highlight type="primary">trabajo remoto</Highlight>)
-                      </p>
-                    </div>
-                  </motion.div>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-bold mb-6">Horario de trabajo</h3>
-                <div className="space-y-2">
-                  <motion.div
-                    className="flex justify-between"
-                    whileHover={{
-                      backgroundColor: theme === "light" ? "rgba(59, 130, 246, 0.05)" : "rgba(59, 130, 246, 0.1)",
-                      padding: "0.5rem",
-                      borderRadius: "0.25rem",
-                    }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <span>Lunes - Viernes:</span>
-                    <span>8:00 - 17:00</span>
-                  </motion.div>
-                  <motion.div
-                    className="flex justify-between"
-                    whileHover={{
-                      backgroundColor: theme === "light" ? "rgba(59, 130, 246, 0.05)" : "rgba(59, 130, 246, 0.1)",
-                      padding: "0.5rem",
-                      borderRadius: "0.25rem",
-                    }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <span>Sábado - Domingo:</span>
-                    <span>Cerrado</span>
-                  </motion.div>
-                </div>
-                <p className="mt-4 text-muted-foreground">
-                  Respondo emails y mensajes fuera del horario laboral, pero las reuniones se programan dentro del
-                  horario establecido.
-                </p>
-              </div>
-            </div>
           </AnimatedSection>
         </div>
       </div>
