@@ -16,9 +16,12 @@ export const ScrollIndicator = memo(function ScrollIndicator() {
       const scrolled = scrollPx / winHeightPx
       setScrollProgress(scrolled)
 
-      // Mostrar el indicador solo después de un poco de scroll
-      setIsVisible(scrollPx > 50)
+      // Mostrar el indicador siempre
+      setIsVisible(true)
     }
+
+    // Inicializar el indicador
+    updateScrollProgress()
 
     window.addEventListener("scroll", updateScrollProgress, { passive: true })
 
