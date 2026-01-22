@@ -12,7 +12,7 @@ export const Hero = memo(function Hero() {
   const { theme } = useTheme()
 
   return (
-    <section className="relative py-20 md:py-32 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className={`absolute inset-0 z-0 overflow-hidden ${theme === "light" ? "opacity-50" : "opacity-40"}`}>
         <img
           src="/200w.gif"
