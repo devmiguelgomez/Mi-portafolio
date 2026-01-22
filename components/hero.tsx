@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, ChevronDown } from "lucide-react"
 import { motion } from "framer-motion"
 import { useTheme } from "next-themes"
 import { Highlight } from "@/components/ui/highlight"
@@ -81,6 +81,19 @@ export const Hero = memo(function Hero() {
           </motion.div>
         </div>
       </div>
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.8, ease: "easeOut" }}
+      >
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
+        >
+          <ChevronDown className="w-8 h-8 text-muted-foreground/80" />
+        </motion.div>
+      </motion.div>
     </section>
   )
 })
