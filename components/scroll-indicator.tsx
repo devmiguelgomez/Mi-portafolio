@@ -12,7 +12,7 @@ export const ScrollIndicator = memo(function ScrollIndicator() {
     const updateScrollProgress = () => {
       const scrollPx = document.documentElement.scrollTop
       const winHeightPx = document.documentElement.scrollHeight - document.documentElement.clientHeight
-      const scrolled = scrollPx / winHeightPx
+      const scrolled = winHeightPx > 0 ? scrollPx / winHeightPx : 0
       setScrollProgress(scrolled)
     }
 
