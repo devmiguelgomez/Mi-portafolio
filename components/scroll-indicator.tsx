@@ -6,7 +6,6 @@ import { useTheme } from "next-themes"
 
 export const ScrollIndicator = memo(function ScrollIndicator() {
   const [scrollProgress, setScrollProgress] = useState(0)
-  const [isVisible, setIsVisible] = useState(false)
   const { theme } = useTheme()
 
   useEffect(() => {
@@ -15,9 +14,6 @@ export const ScrollIndicator = memo(function ScrollIndicator() {
       const winHeightPx = document.documentElement.scrollHeight - document.documentElement.clientHeight
       const scrolled = scrollPx / winHeightPx
       setScrollProgress(scrolled)
-
-      // Mostrar el indicador siempre
-      setIsVisible(true)
     }
 
     // Inicializar el indicador
@@ -29,8 +25,6 @@ export const ScrollIndicator = memo(function ScrollIndicator() {
       window.removeEventListener("scroll", updateScrollProgress)
     }
   }, [])
-
-  if (!isVisible) return null
 
   return (
     <motion.div
