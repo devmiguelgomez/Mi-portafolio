@@ -82,7 +82,7 @@ export const Hero = memo(function Hero() {
         </div>
       </div>
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+        className="absolute bottom-16 left-1/2 -translate-x-1/2 z-10"
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.8, ease: "easeOut" }}

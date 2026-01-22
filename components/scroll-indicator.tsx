@@ -28,7 +28,7 @@ export const ScrollIndicator = memo(function ScrollIndicator() {
 
   return (
     <motion.div
-      className={`fixed top-0 left-0 right-0 h-1 ${theme === "light" ? "bg-primary/70" : "bg-primary"} z-[60]`}
+      className={`fixed top-0 left-0 right-0 h-1 ${theme === "light" ? "bg-primary/70" : "bg-primary"} z-[51]`}
       style={{ scaleX: scrollProgress, transformOrigin: "0%" }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
