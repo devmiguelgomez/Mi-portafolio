@@ -71,6 +71,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    google: "hou10qwq7OmtpbChxt26UyJaGG0z71Y6lD4JFEf6zjc",
+  },
 }
 
 // Schema.org Person — datos estructurados para Google
