@@ -17,7 +17,7 @@ const testimonials = [
       "Miguel transformó nuestra idea en una plataforma web que superó todas nuestras expectativas. Su enfoque técnico y comprensión de nuestras necesidades de negocio fue excepcional.",
     author: "Ana Martínez",
     position: "Comerciante de E-commerce",
-    image: "/testimonio-2.png?height=100&width=100",
+    image: "/testimonio-2.png",
     highlights: ["transformó", "superó todas nuestras expectativas", "excepcional"],
   },
   {
@@ -25,7 +25,7 @@ const testimonials = [
       "Trabajar con Miguel fue una experiencia increíble. Entregó nuestro proyecto a tiempo y dentro del presupuesto, y siempre estuvo disponible para responder nuestras preguntas.",
     author: "Carlos Rodríguez",
     position: "Gerente de Marketing",
-    image: "/testimonio-1.png?height=100&width=100",
+    image: "/testimonio-1.png",
     highlights: ["experiencia increíble", "a tiempo", "dentro del presupuesto"],
   },
   {
@@ -33,7 +33,7 @@ const testimonials = [
       "La aplicación web que Miguel desarrolló para nosotros ha sido fundamental para el crecimiento de nuestro negocio. Su atención al detalle y conocimiento técnico son impresionantes.",
     author: "Laura Sánchez",
     position: "Gerente de Producto",
-    image: "/testimonio-3.png?height=100&width=100",
+    image: "/testimonio-3.png",
     highlights: ["fundamental", "crecimiento", "impresionantes"],
   },
 ]
@@ -67,9 +67,8 @@ export const Testimonials = memo(function Testimonials() {
             <StaggerItem key={index}>
               <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.3 }}>
                 <Card
-                  className={`border ${
-                    theme === "light" ? "border-border/20 bg-white/80" : "border-border/40 bg-background/60"
-                  } backdrop-blur-sm h-full`}
+                  className={`border ${theme === "light" ? "border-border/20 bg-white/80" : "border-border/40 bg-background/60"
+                    } backdrop-blur-sm h-full`}
                 >
                   <CardContent className="pt-6">
                     <motion.div
@@ -96,10 +95,11 @@ export const Testimonials = memo(function Testimonials() {
                     >
                       <Image
                         src={testimonial.image || "/placeholder.svg"}
-                        alt={testimonial.author}
+                        alt={`Foto de ${testimonial.author}, ${testimonial.position}`}
                         fill
                         className="object-cover"
                         loading="lazy"
+                        sizes="48px"
                       />
                     </motion.div>
                     <div>

@@ -13,33 +13,38 @@ import { memo } from "react"
 const services = [
   {
     icon: <Globe className="h-10 w-10 text-primary" />,
-    title: "Desarrollo Web",
-    description: "Sitios web modernos, rápidos y optimizados para SEO que convierten visitantes en clientes.",
-    keywords: ["modernos", "rápidos", "optimizados para SEO"],
+    title: "Desarrollo Web Profesional",
+    description:
+      "Sitios web rápidos, modernos y optimizados para SEO que convierten visitantes en clientes. Tu negocio merece una presencia digital que venda sola.",
+    keywords: ["rápidos", "optimizados para SEO", "que venda sola"],
   },
   {
     icon: <Code2 className="h-10 w-10 text-primary" />,
-    title: "Aplicaciones Web",
-    description: "Aplicaciones web personalizadas con interfaces intuitivas y experiencias de usuario excepcionales.",
-    keywords: ["personalizadas", "intuitivas", "excepcionales"],
+    title: "Aplicaciones Web a Medida",
+    description:
+      "Apps web personalizadas con React y Next.js que resuelven el problema exacto de tu negocio. Si se puede imaginar, se puede construir.",
+    keywords: ["personalizadas", "resuelven el problema exacto"],
   },
   {
     icon: <Database className="h-10 w-10 text-primary" />,
-    title: "Integración de APIs",
-    description: "Conexión de sistemas y servicios para automatizar procesos y mejorar la eficiencia de tu negocio.",
-    keywords: ["automatizar", "eficiencia"],
+    title: "Integración de APIs y Sistemas",
+    description:
+      "Conecto tu software de facturación, pasarelas de pago y CRMs para que tu negocio funcione en piloto automático. Más eficiencia, menos errores humanos.",
+    keywords: ["piloto automático", "Menos errores humanos"],
   },
   {
     icon: <LayoutDashboard className="h-10 w-10 text-primary" />,
     title: "Paneles Administrativos",
-    description: "Dashboards personalizados para gestionar tu negocio con datos en tiempo real y métricas clave.",
-    keywords: ["tiempo real", "métricas clave"],
+    description:
+      "Dashboards con datos en tiempo real para que tomes decisiones basadas en métricas, no en suposiciones. Controla toda tu operación desde una sola pantalla.",
+    keywords: ["tiempo real", "métricas", "decisiones"],
   },
   {
     icon: <Workflow className="h-10 w-10 text-primary" />,
-    title: "Automatización",
-    description: "Optimización de procesos repetitivos para ahorrar tiempo y reducir errores en tu operación.",
-    keywords: ["ahorrar tiempo", "reducir errores"],
+    title: "Automatización de Procesos",
+    description:
+      "Elimino las tareas repetitivas que consumen horas de tu equipo. Ahorra tiempo, reduce errores y escala tu negocio sin contratar más personal.",
+    keywords: ["Ahorra tiempo", "reduce errores", "escala"],
   },
 ]
 
@@ -71,9 +76,8 @@ export const Services = memo(function Services() {
           {services.map((service, index) => (
             <StaggerItem key={index}>
               <Card
-                className={`border ${
-                  theme === "light" ? "border-border/20 bg-white/80" : "border-border/40 bg-background/60"
-                } backdrop-blur-sm hover:border-primary/40 transition-all duration-300 h-full`}
+                className={`border ${theme === "light" ? "border-border/20 bg-white/80" : "border-border/40 bg-background/60"
+                  } backdrop-blur-sm hover:border-primary/40 transition-all duration-300 h-full`}
               >
                 <CardHeader>
                   <motion.div

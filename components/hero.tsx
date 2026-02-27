@@ -14,18 +14,26 @@ export const Hero = memo(function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className={`absolute inset-0 z-0 overflow-hidden ${theme === "light" ? "opacity-50" : "opacity-40"}`}>
-        <img
-          src="/200w.gif"
-          alt="Background animation"
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          aria-hidden="true"
           className="absolute w-full h-full object-cover"
           style={{ filter: "blur(2px)" }}
-        />
+        >
+          {/* Preferir MP4 (mejor compresión). El GIF es el fallback. */}
+          <source src="/200w.mp4" type="video/mp4" />
+          <source src="/200w.webm" type="video/webm" />
+          {/* Fallback para navegadores muy antiguos */}
+          <img src="/200w.gif" alt="" aria-hidden="true" className="absolute w-full h-full object-cover" />
+        </video>
         <div
-          className={`absolute inset-0 bg-gradient-to-b ${
-            theme === "light"
-              ? "from-background/90 via-background/70 to-background/90"
-              : "from-background/90 via-background/70 to-background/90"
-          }`}
+          className={`absolute inset-0 bg-gradient-to-b ${theme === "light"
+            ? "from-background/90 via-background/70 to-background/90"
+            : "from-background/90 via-background/70 to-background/90"
+            }`}
         ></div>
       </div>
       <div className="container relative z-10">
@@ -36,18 +44,32 @@ export const Hero = memo(function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <Highlight type="gradient">Transformando Ideas</Highlight> en{" "}
-            <Highlight type="bold">Soluciones Digitales</Highlight>
+            <Highlight type="gradient">Desarrollador Web</Highlight>{" "}
+            <Highlight type="bold">Full Stack</Highlight>
+            {" & "}
+            <Highlight type="primary">MERN Stack</Highlight>
           </motion.h1>
           <motion.p
-            className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl"
+            className="text-xl md:text-2xl text-muted-foreground mb-3 max-w-2xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
           >
-            Desarrollo <Highlight type="primary">aplicaciones web</Highlight> y{" "}
-            <Highlight type="primary">sitios a medida</Highlight> que impulsan el{" "}
+            Transformando ideas en{" "}
+            <Highlight type="primary">soluciones digitales</Highlight> que impulsan el{" "}
             <Highlight type="bold">crecimiento de tu negocio</Highlight>
+          </motion.p>
+          <motion.p
+            className="text-base text-muted-foreground mb-8 max-w-xl"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.25, ease: "easeOut" }}
+          >
+            Especializado en{" "}
+            <Highlight type="primary">React</Highlight>,{" "}
+            <Highlight type="primary">Next.js</Highlight> y{" "}
+            <Highlight type="primary">Node.js</Highlight> · Disponible en{" "}
+            <Highlight type="bold">Cali, Colombia</Highlight> y remotamente para el mundo
           </motion.p>
           <motion.div
             className="flex flex-col sm:flex-row gap-4"

@@ -34,14 +34,19 @@ export function Footer() {
               </motion.div>
               <span>Miguel Gómez</span>
             </Link>
-            <p className="text-muted-foreground mb-4 max-w-md">
-              Desarrollador Full Stack especializado en crear soluciones digitales que impulsan el crecimiento de
-              negocios.
+            <p className="text-muted-foreground mb-2 max-w-md">
+              Desarrollador Web Full Stack especializado en el stack{" "}
+              <strong className="text-foreground/80">MERN (MongoDB, Express, React, Node.js)</strong> y Next.js.
+            </p>
+            <p className="text-muted-foreground mb-4 max-w-md text-sm">
+              📍 <strong className="text-foreground/80">Cali, Colombia</strong> · Disponible para proyectos en el{" "}
+              <strong className="text-foreground/80">Valle del Cauca</strong>, toda Colombia y de forma{" "}
+              <strong className="text-foreground/80">remota a nivel mundial</strong>.
             </p>
             <div className="flex gap-4">
               {[
-                { icon: <Github className="h-5 w-5" />, label: "GitHub", href: "https://github.com/devmiguelgomez/" },
-                { icon: <Linkedin className="h-5 w-5" />, label: "LinkedIn", href: "https://www.linkedin.com/in/devmiguelgomez/" },
+                { icon: <Github className="h-5 w-5" />, label: "GitHub de Miguel Gómez", href: "https://github.com/devmiguelgomez/" },
+                { icon: <Linkedin className="h-5 w-5" />, label: "LinkedIn de Miguel Gómez", href: "https://www.linkedin.com/in/devmiguelgomez/" },
               ].map((social, index) => (
                 <motion.div key={index} whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
                   <Link href={social.href} target="_blank" rel="noopener noreferrer">

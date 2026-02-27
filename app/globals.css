@@ -32,14 +32,17 @@
     from {
       height: 0;
     }
+
     to {
       height: var(--radix-accordion-content-height);
     }
   }
+
   @keyframes accordion-up {
     from {
       height: var(--radix-accordion-content-height);
     }
+
     to {
       height: 0;
     }
@@ -97,13 +100,38 @@
   * {
     @apply border-border;
   }
+
+  /* Container centrado - Tailwind v4 no lee tailwind.config.ts para esto */
+  .container {
+    margin-inline: auto;
+    padding-inline: 2rem;
+    max-width: 1400px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Evita zoom automático en inputs en iOS */
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
   body {
     @apply bg-background text-foreground;
+    /* Anti-aliasing cross-browser */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Evita scroll horizontal accidental en mobile */
+    overflow-x: hidden;
   }
 }
 
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-emerald-400;
+  background: linear-gradient(to right, #22d3ee, #3b82f6, #34d399);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .hero-gradient {
@@ -133,4 +161,25 @@
   background-image: linear-gradient(to right, rgba(59, 130, 246, 0.1) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
   background-size: 20px 20px;
+}
+
+/* Fix backdrop-blur para Safari */
+.backdrop-blur-sm,
+.backdrop-blur-md,
+.backdrop-blur-lg {
+  -webkit-backdrop-filter: blur(var(--tw-backdrop-blur));
+  backdrop-filter: blur(var(--tw-backdrop-blur));
+}
+
+/* Fix video autoplay en iOS Safari */
+video {
+  -webkit-playsinline: true;
+}
+
+/* Fix para Safari: prevent text flickering on theme change */
+@supports (-webkit-touch-callout: none) {
+  body {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
 }

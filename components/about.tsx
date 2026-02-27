@@ -25,7 +25,7 @@ export const About = memo(function About() {
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
                 Soy Miguel Gómez, <Highlight type="bold">desarrollador Full Stack</Highlight> con más de{" "}
-                <Highlight type="primary">2 años de experiencia</Highlight> creando soluciones digitales para empresas
+                <Highlight type="primary">3 años de experiencia</Highlight> creando soluciones digitales para empresas
                 de todos los tamaños.
               </p>
               <p className="text-lg text-muted-foreground mb-8">
@@ -39,9 +39,8 @@ export const About = memo(function About() {
             <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               <StaggerItem>
                 <Card
-                  className={`${
-                    theme === "light" ? "bg-muted/50" : "bg-muted/30"
-                  } border-none hover:bg-muted/70 transition-colors duration-300`}
+                  className={`${theme === "light" ? "bg-muted/50" : "bg-muted/30"
+                    } border-none hover:bg-muted/70 transition-colors duration-300`}
                 >
                   <CardContent className="p-4 flex items-start gap-3">
                     <motion.div
@@ -62,9 +61,8 @@ export const About = memo(function About() {
 
               <StaggerItem>
                 <Card
-                  className={`${
-                    theme === "light" ? "bg-muted/50" : "bg-muted/30"
-                  } border-none hover:bg-muted/70 transition-colors duration-300`}
+                  className={`${theme === "light" ? "bg-muted/50" : "bg-muted/30"
+                    } border-none hover:bg-muted/70 transition-colors duration-300`}
                 >
                   <CardContent className="p-4 flex items-start gap-3">
                     <motion.div
@@ -85,9 +83,8 @@ export const About = memo(function About() {
 
               <StaggerItem>
                 <Card
-                  className={`${
-                    theme === "light" ? "bg-muted/50" : "bg-muted/30"
-                  } border-none hover:bg-muted/70 transition-colors duration-300`}
+                  className={`${theme === "light" ? "bg-muted/50" : "bg-muted/30"
+                    } border-none hover:bg-muted/70 transition-colors duration-300`}
                 >
                   <CardContent className="p-4 flex items-start gap-3">
                     <motion.div
@@ -108,9 +105,8 @@ export const About = memo(function About() {
 
               <StaggerItem>
                 <Card
-                  className={`${
-                    theme === "light" ? "bg-muted/50" : "bg-muted/30"
-                  } border-none hover:bg-muted/70 transition-colors duration-300`}
+                  className={`${theme === "light" ? "bg-muted/50" : "bg-muted/30"
+                    } border-none hover:bg-muted/70 transition-colors duration-300`}
                 >
                   <CardContent className="p-4 flex items-start gap-3">
                     <motion.div
@@ -137,17 +133,17 @@ export const About = memo(function About() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
               whileHover={{ scale: 1.05 }}
-              className={`relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 ${
-                theme === "light" ? "border-primary/10" : "border-primary/20"
-              }`}
+              className={`relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 ${theme === "light" ? "border-primary/10" : "border-primary/20"
+                }`}
             >
               <Image
-                src="/mi-foto.jpg?height=320&width=320"
-                alt="Miguel Gómez"
+                src="/mi-foto.webp"
+                alt="Miguel Ángel Gómez - Desarrollador Web Full Stack en Cali, Colombia"
                 fill
                 className="object-cover"
                 loading="eager"
                 priority
+                sizes="(max-width: 768px) 256px, 320px"
               />
             </motion.div>
           </div>

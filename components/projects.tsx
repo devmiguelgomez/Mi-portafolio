@@ -19,7 +19,7 @@ const projects = [
     title: "Study Buddy - Plataforma Educativa Inteligente",
     description:
       "Plataforma educativa interactiva que utiliza IA para proporcionar explicaciones personalizadas y permite gestionar documentos académicos.",
-    image: "/StudyBuddy.png?height=400&width=600",
+    image: "/StudyBuddy.png",
     tags: ["React", "Node.js", "MongoDB", "Gemini AI", "Tailwind CSS"],
     link: "https://study-ia-fronted.vercel.app/",
     highlights: ["plataforma educativa", "explicaciones personalizadas", "gestión de documentos", "IA integrada"],
@@ -28,7 +28,7 @@ const projects = [
     title: "Dashboard Empresarial(En desarrollo)",
     description:
       "Panel administrativo para visualización de métricas de ventas y gestión de inventario para una empresa de retail con múltiples sucursales.",
-    image: "/Dashboard-empresarial.png?height=400&width=600",
+    image: "/Dashboard-empresarial.png",
     tags: ["React", "Express", "PostgreSQL", "Chart.js"],
     link: "",
     highlights: ["métricas de ventas", "gestión de inventario", "múltiples sucursales"],
@@ -37,7 +37,7 @@ const projects = [
     title: "App de Gestión de Proyectos(Pronto)",
     description:
       "Aplicación web para la gestión de proyectos, tareas y equipos con funcionalidades de colaboración en tiempo real.",
-    image: "/coming-soon.jpg?height=400&width=600",
+    image: "/coming-soon.jpg",
     tags: ["Vue.js", "Firebase", "Tailwind CSS"],
     link: "#",
     highlights: ["gestión de proyectos", "colaboración en tiempo real"],
@@ -72,9 +72,8 @@ export const Projects = memo(function Projects() {
           {projects.map((project, index) => (
             <StaggerItem key={index}>
               <Card
-                className={`overflow-hidden border ${
-                  theme === "light" ? "border-border/20 bg-white/80" : "border-border/40 bg-background/60"
-                } backdrop-blur-sm hover:border-primary/40 transition-all duration-300 h-full`}
+                className={`overflow-hidden border ${theme === "light" ? "border-border/20 bg-white/80" : "border-border/40 bg-background/60"
+                  } backdrop-blur-sm hover:border-primary/40 transition-all duration-300 h-full`}
               >
                 <motion.div
                   className="aspect-video relative overflow-hidden"
@@ -87,6 +86,7 @@ export const Projects = memo(function Projects() {
                     fill
                     className="object-cover transition-transform duration-500 hover:scale-105"
                     loading="lazy"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </motion.div>
                 <CardHeader>
